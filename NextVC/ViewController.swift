@@ -38,8 +38,13 @@ class ViewController: UIViewController {
     
     // 2) 코드로 스토리보드 객체를 생성해서, 화면 이동
     @IBAction func storyboardWithCodeButtonTapped(_ sender: UIButton) {
-
+        // 위 처럼 간단하게 코드로 연결 할 수가 없다. 그래서 스토리보드와 연결하기 위해선 다르게 해줘야한다.
         
+        // UIViewController에 storyboard라는 변수가 이미 있다. 그거 이용하는 것임.
+        // 아래처럼 설정했다면 스토리보드로 가서 내가 적은 string과 똑같이 id를 설정해야한다. 
+        let secondVC = storyboard?.instantiateViewController(withIdentifier: "secondVC") as! SecondViewController
+        
+        present(secondVC, animated: true, completion: nil)
         
         
         
